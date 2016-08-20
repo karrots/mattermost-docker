@@ -15,6 +15,10 @@ server {
     ssl_ciphers HIGH:MEDIUM:!SSLv2:!PSK:!SRP:!ADH:!AECDH;
     ssl_prefer_server_ciphers on;
 
+    location /.well-known {
+        root /letsencrypt/.well-known;
+    }
+
     location / {
         gzip off;
         proxy_set_header X-Forwarded-Ssl on;

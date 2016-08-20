@@ -1,6 +1,10 @@
 server {
     listen 80;
 
+    location /.well-known {
+        root /letsencrypt/.well-known;
+    }
+
     location / {
         gzip off;
 
